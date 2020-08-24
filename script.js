@@ -79,3 +79,8 @@ function doubleClic() {
 if (headerEl){
     headerEl.addEventListener("click", doubleClic);
 }
+
+
+//Fonctionnalité 6 :
+
+
