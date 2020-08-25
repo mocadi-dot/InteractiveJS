@@ -84,6 +84,21 @@ if (headerEl){
 //Fonctionnalité 6 : Fonctionnalité 6 :
 //si un utilisateur passe sa souris sur le bouton "View" d'une card (n'importe laquelle), celle-ci va se réduire. l'image n'apparaîtra qu'à 20 % de sa taille d'origine et les boutons "Edit" / "View" restent visibles. fonction réversible en repassant sa souris.
 
-//let cardEl = document.getElementsByClassName("col-md-4")[0];
-//let editEl = document.getElementsByClassName("btn btn-sm btn-outline-secondary")[0];
-//let textEl = document.getElementsByClassName("card-text")[0];
+let cardElmts = document.getElementsByClassName("card");
+
+for (let count = 0; count < 6; count++) {
+	let cardText = cardElmts[count].getElementsByClassName("card-text")[0];
+    let cardImage = cardElmts[count].getElementsByClassName("card-img-top")[0];
+  let cardButtonView = cardElmts[count].getElementsByTagName("button")[0];
+  
+	function miniCard() {
+		if (cardImage.style.width === "20%") {
+			cardImage.style = "";
+			cardText.classList.toggle("collapse");
+		}
+		else {
+			cardImage.style.width = "20%";
+			cardText.classList.toggle("collapse");
+		}
+	}
+	cardButtonView.addEventListener("mouseover", miniCard);
