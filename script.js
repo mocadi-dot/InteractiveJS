@@ -88,17 +88,17 @@ let cardElmts = document.getElementsByClassName("card");
 
 for (let count = 0; count < 6; count++) {
 	let cardText = cardElmts[count].getElementsByClassName("card-text")[0];
-    let cardImage = cardElmts[count].getElementsByClassName("card-img-top")[0];
+  let cardImage = cardElmts[count].getElementsByClassName("card-img-top")[0];
   let cardButtonView = cardElmts[count].getElementsByTagName("button")[0];
   
 	function miniCard() {
-		if (cardImage.style.width === "20%") {
-			cardImage.style = "";
-			cardText.classList.toggle("collapse");
+	  if (cardImage.style.width === "20%") {
+	 	cardImage.style = "";
+		cardText.classList.toggle("collapse");
 		}
-		else {
-			cardImage.style.width = "20%";
-			cardText.classList.toggle("collapse");
-		}
+	else {
+		cardImage.style.width = "20%";
+		cardText.classList.toggle("collapse");
 	}
-	cardButtonView.addEventListener("mouseover", miniCard);
+}
+cardButtonView.addEventListener("mouseover", miniCard);
